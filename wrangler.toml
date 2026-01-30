@@ -1,0 +1,9 @@
+name = "airports-redirect"
+main = "src/index.ts"
+compatibility_date = "2024-01-30"
+
+# Routes can be configured here or in Cloudflare dashboard
+# Uncomment and update zone_name if deploying via wrangler
+# routes = [
+#   { pattern = "airports.indy.center/*", zone_name = "indy.center" }
+# ]
