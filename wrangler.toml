@@ -1,4 +1,4 @@
-name = "airports-redirect"
+name = "airports-redirect-worker"
 main = "src/index.ts"
 compatibility_date = "2024-01-30"
 
