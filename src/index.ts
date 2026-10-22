@@ -1,19 +1,13 @@
 export default {
   async fetch(request: Request): Promise<Response> {
-    const url = new URL(request.url);
-    const hostname = url.hostname;
-    
-    // Check if it's airports.indy.center
-    if (hostname === 'airports.indy.center') {
-      const path = url.pathname;
-      
-      // Redirect to wiki with the same path
-      const targetUrl = `https://wiki.flyindycenter.com/pilots${path}${url.search}`;
-      
-      return Response.redirect(targetUrl, 301);
+    const url = new URL(request.url)
+
+    if (url.hostname === 'airports.indy.center') {
+      const path = url.pathname.toLowerCase()
+      const target = `https://wiki.flyindycenter.com/pilots${path}${url.search}`
+      return Response.redirect(target, 301)
     }
-    
-    // Pass through for other hosts
-    return fetch(request);
-  }
-};
+
+    return fetch(request)
+  },
+} satisfies ExportedHandler
